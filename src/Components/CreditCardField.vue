@@ -29,7 +29,7 @@
                                 <div v-else key="icons" class="credit-card-icons">
                                     <animate-css mode="out-in" name="flip" y>
                                         <div v-if="focused !== 'cvc'" key="front" class="credit-card-field-icon-card">
-                                            <icon :icon="[icon ? 'fab' : 'far', icon || 'credit-card']" :data-brand="type && type.niceType || 'unknown'" class="credit-card-field-icon" width="20" height="18"/>
+                                            <icon :icon="[fa_icon ? 'fab' : 'far', fa_icon || 'credit-card']" :data-brand="type && type.niceType || 'unknown'" class="credit-card-field-icon" width="20" height="18"/>
                                         </div>                                
                                         <div v-else key="back" class="credit-card-field-icon-card">
                                             <icon :icon="['fas', 'credit-card']" class="credit-card-field-icon" width="23.33" height="20"/>
@@ -447,7 +447,7 @@ export default {
 
             this.type = type;
             this.code = type && type.code;
-            this.icon = type && `cc-${(ICONS[type.type] || type.type)}`;
+            this.fa_icon = type && `cc-${(ICONS[type.type] || type.type)}`;
             this.$set(this.card, 'brand', type ? type.type : null);
             this.$set(this.card, 'numberFormatted', format(this.card.number, this.type));
             
@@ -481,7 +481,7 @@ export default {
         return {
             card,
             validated,
-            icon: null,
+            fa_icon: null,
             code: null,
             type: null,
             focused: null,
