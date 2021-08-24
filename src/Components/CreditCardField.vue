@@ -19,7 +19,7 @@
                         ref="number"
                         name="number"
                         label="Card Number"
-                        placeholder="Credit Card Number"
+                        placeholder="Card Number"
                         @validate="onValidate"
                         @card-types.native="onCardTypeChange"
                         @valid.native="() => onValid('number', showName ? 'name' : 'expMonth')">
